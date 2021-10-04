@@ -1,7 +1,7 @@
 # pwpush-ephemeral
 FROM ruby:3.0.2
 
-LABEL maintainer='richardd@cvv.com.au'
+LABEL maintainer='pglombardo@hey.com'
 
 ENV APP_ROOT=/opt/PasswordPusher
 ENV PATH=${APP_ROOT}:${PATH} HOME=${APP_ROOT}
@@ -14,7 +14,7 @@ RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources
 RUN apt-get update -qq && \
     apt-get install -qq -y --assume-yes build-essential apt-utils libpq-dev git curl tzdata libsqlite3-0 libsqlite3-dev zlib1g-dev nodejs yarn && \
     cd /opt && \
-    git clone https://github.com/CVA-RD/PasswordPusher && \
+    git clone https://github.com/pglombardo/PasswordPusher.git && \
     touch ${APP_ROOT}/log/private.log
 
 EXPOSE 5100
